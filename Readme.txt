@@ -1,5 +1,6 @@
 This script gives some small tools for UV mapping in 3ds max
 
+![Screenshot](/readmeimages/screenshot.png)
 	
 Contents:
 

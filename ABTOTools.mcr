@@ -318,7 +318,7 @@ undo off (
 	
 	if(not terminateScript) then
 	(
-		CreateDialog ABTOTools height:400
+		CreateDialog ABTOTools height:150
 	)
 )
 )
