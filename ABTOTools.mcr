@@ -7,18 +7,6 @@
 
 -- January 2018.
 
--- === Version history ===
-
--- == v0.1 = 2017-01-21 ==
--- - Initial release
-
--- == v0.2 = 2017-01-22 ==
--- - Now comparing UVs while welding without W-coordinate
--- - Ability to weld only by U or only by V coordinates
--- - Slightly improved interface
-
-
-
 macroScript ABTOUV
 category:"ABTO Tools"
 icon:#("Max_Edit_Modifiers",13)
@@ -288,8 +276,8 @@ undo off (
 
 		)
 		
-		hyperLink scriptpage "Script Homepage" color:(color 128 128 255) hoverColor:(color 200 200 255) visitedColor:(color 0 0 255) address:"http://maslov.co/"	
-		hyperLink authorpage "by http://maslov.co" color:(color 128 128 255) hoverColor:(color 200 200 255) visitedColor:(color 0 0 255) address:"http://maslov.co/"	 
+		hyperLink scriptpage "Script Homepage" color:(color 128 128 255) hoverColor:(color 200 200 255) visitedColor:(color 0 0 255) address:"https://github.com/ABTOMAT/ABTOTools3dsMax"	
+		hyperLink authorpage "by Dmitry Maslov" color:(color 128 128 255) hoverColor:(color 200 200 255) visitedColor:(color 0 0 255) address:"http://maslov.co/"	 
 		
 		on btnGo pressed do with undo label:"Weld vertices" on
 		(
