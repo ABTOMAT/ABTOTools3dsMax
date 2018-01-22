@@ -1,23 +1,42 @@
+# ABTO Tools for 3ds Max
+
+## Summary
+
 This script gives some small tools for UV mapping in 3ds max
+
+* Welding UV vertices
 
 ![Screenshot](/readmeimages/screenshot.png)
 	
 ## Contents:
 
 1. Author
-2. Installation
-3. Version History
+2. Features
+3. Installation
+4. Version History
 
 ## 1. Author
 
 Made by Dmitry Maslov @ http://maslov.co
-Skype: blitz3dproger
-Telegram: @ABTOMAT
-GitHub: ABTOMAT
+* Skype: blitz3dproger
+* Telegram: @ABTOMAT
+* GitHub: ABTOMAT
 
 January 2018.
 
-## 2. Installation
+## 2. Features
+
+### Welding UV vertices
+
+You can weld UV vertices within the given threshold by clicking "Weld" button.
+
+
+![Before welding](/readmeimages/welding_regular_before.png)
+![After welding](/readmeimages/welding_regular_after.png)
+
+You can also do this only by U or by V coordinate by choosing the corresponding radiobutton.
+
+## 3. Installation
 
 * Drag and drop the *.mcr file from Windows Explorer to the 3ds Max window.
 * Select menu item "Customize -> Customize User Interface..."
@@ -29,13 +48,13 @@ January 2018.
 
 * To update script to a new version just drag and drop the new version of the *.mcr file from Windows Explorer to the 3ds Max window.
 
-## 3. Version history
+## 4. Version history
 
-### v0.1 = 2017-01-21
+### v0.1 @ 2017-01-21
 
 * Initial release
 
-### v0.2 = 2017-01-22
+### v0.2 @ 2017-01-22
 
 * Now comparing UVs while welding without W-coordinate
 * Ability to weld only by U or only by V coordinates
