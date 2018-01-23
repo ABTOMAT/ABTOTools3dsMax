@@ -12,6 +12,9 @@ category:"ABTO Tools"
 icon:#("Max_Edit_Modifiers",13)
 (
 undo off (
+
+	scriptVersion = "0.3"
+
 	config =
 	#(
 		#("option", "")
@@ -67,7 +70,7 @@ undo off (
 			settingVal = config[i][2]
 			
 			WriteString file settingName
-			WriteString file settingVal			
+			WriteString file (settingVal	as string)		
 		)
 		
 		fclose file
@@ -162,7 +165,7 @@ undo off (
 				)
 				
 				dist = distance vertPos vertToCheckPos
-				
+								
 				if dist < threshold then
 				(
 					append vertsToWeld verts[i]
@@ -258,7 +261,7 @@ undo off (
 		)
 	)
 	
-	rollout ABTOTools "ABTO Tools v0.2" width:220 height:200
+	rollout ABTOTools ("ABTO Tools v"+scriptVersion) width:220 height:200
 	(
 		/*
 		group "Start Processing"
@@ -268,8 +271,13 @@ undo off (
 		*/
 		
 		group "Weld UVs"
-		(
-			spinner welding_input_threshold "Welding Threshold" range:[0,2,(presetValues[1][1] as float)] scale:0.01
+		(		
+			radiobuttons welding_radio_threshold "Threshold" labels:#("0.25","0.1","0.05", "0.025", "0.01", "0.005", "0.0025", "0.001", "Custom") columns:3
+			
+			spinner welding_input_threshold "Custom Threshold" range:[0,2,(presetValues[1][1] as float)] scale:0.001
+			
+			
+			
 			radiobuttons welding_radio_mode labels:#("Regular", "Only U", "Only V")
 			
 			button btnGo "W E L D!" toolTip:"" width:130
@@ -278,6 +286,70 @@ undo off (
 		
 		hyperLink scriptpage "Script Homepage" color:(color 128 128 255) hoverColor:(color 200 200 255) visitedColor:(color 0 0 255) address:"https://github.com/ABTOMAT/ABTOTools3dsMax"	
 		hyperLink authorpage "by Dmitry Maslov" color:(color 128 128 255) hoverColor:(color 200 200 255) visitedColor:(color 0 0 255) address:"http://maslov.co/"	 
+		
+		on welding_radio_threshold changed state do
+		(
+			
+			setSetting "weldingThresholdRadio" welding_radio_threshold.state
+		
+			-- To-Do: Replace switch-case with reading values from array
+		
+			case welding_radio_threshold.state of
+			(
+				1:
+				(
+					setSetting "weldingThresholdVal"  0.25
+				)
+				2:
+				(
+					setSetting "weldingThresholdVal"  0.1
+				)
+				3:
+				(
+					setSetting "weldingThresholdVal"  0.05
+				)
+				4:
+				(
+					setSetting "weldingThresholdVal"  0.025
+				)
+				5:
+				(
+					setSetting "weldingThresholdVal"  0.01
+				)
+				6:
+				(
+					setSetting "weldingThresholdVal"  0.005
+				)
+				7:
+				(
+					setSetting "weldingThresholdVal"  0.0025
+				)
+				8:
+				(
+					setSetting "weldingThresholdVal"  0.001
+				)
+				9:
+				(
+					setSetting "weldingThresholdVal"  welding_input_threshold.value
+					setSetting "weldingThresholdValCustom"  welding_input_threshold.value
+				)
+			)			
+		
+			if welding_radio_threshold.state == 9 then
+				welding_input_threshold.enabled = true
+			else
+				welding_input_threshold.enabled = false
+			endif
+			
+			
+			saveConfig()
+		)
+		
+		on welding_input_threshold changed value do
+		(
+			setSetting "weldingThresholdValCustom"  welding_input_threshold.value
+			saveConfig()
+		)
 		
 		on btnGo pressed do with undo label:"Weld vertices" on
 		(
@@ -294,7 +366,7 @@ undo off (
 					
 					while vertsToBeChecked.count > 0 do
 					(
-						vertsToWeld = findVertsToWeld unwrapuvw vertsToBeChecked vertsToBeChecked[1] welding_input_threshold.value welding_radio_mode.state
+						vertsToWeld = findVertsToWeld unwrapuvw vertsToBeChecked vertsToBeChecked[1] (getSetting "weldingThresholdVal") welding_radio_mode.state
 						-- Append the groups found to array
 						append weldingGroups vertsToWeld
 					)
@@ -314,11 +386,93 @@ undo off (
 				messagebox "Please select an object first!" title:"Nothing is selected" beep:true
 			endif
 		)
+		
+		
+		on ABTOTools open do
+		(
+			-- To-Do: move this code to external function and enhance
+			-- "Updatethersholdpresets or smth.
+		
+			setting_weldingThresholdValCustom  = getSetting "weldingThresholdValCustom"
+			
+
+			if setting_weldingThresholdValCustom == undefined then
+			(
+				setting_weldingThresholdValCustom = 0.01
+			)
+			setting_weldingThresholdValCustom = setting_weldingThresholdValCustom as float
+			
+			welding_input_threshold.value = setting_weldingThresholdValCustom
+			
+			-------------------
+			
+		
+			setting_weldingThresholdRadio = getSetting "weldingThresholdRadio"
+			
+
+			
+			if setting_weldingThresholdRadio == undefined then
+			(
+				setting_weldingThresholdRadio = 1
+			)
+			
+			setting_weldingThresholdRadio = setting_weldingThresholdRadio as integer
+			
+			welding_radio_threshold.state = setting_weldingThresholdRadio
+			
+			case welding_radio_threshold.state of
+			(
+				1:
+				(
+					setSetting "weldingThresholdVal"  0.25
+				)
+				2:
+				(
+					setSetting "weldingThresholdVal"  0.1
+				)
+				3:
+				(
+					setSetting "weldingThresholdVal"  0.05
+				)
+				4:
+				(
+					setSetting "weldingThresholdVal"  0.025
+				)
+				5:
+				(
+					setSetting "weldingThresholdVal"  0.01
+				)
+				6:
+				(
+					setSetting "weldingThresholdVal"  0.005
+				)
+				7:
+				(
+					setSetting "weldingThresholdVal"  0.0025
+				)
+				8:
+				(
+					setSetting "weldingThresholdVal"  0.001
+				)
+				9:
+				(
+					setSetting "weldingThresholdVal"  welding_input_threshold.value
+				)
+			)			
+		
+			if welding_radio_threshold.state == 9 then
+				welding_input_threshold.enabled = true
+			else
+				welding_input_threshold.enabled = false
+			endif
+			
+		)
 	)
+	
 	
 	if(not terminateScript) then
 	(
-		CreateDialog ABTOTools height:150
+		CreateDialog ABTOTools height:200
 	)
 )
 )

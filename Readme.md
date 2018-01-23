@@ -61,3 +61,8 @@ You can also do this only by U or by V coordinate by choosing the corresponding 
 * Slightly improved interface
 * Minor bugfixes
 * Created project on GitHub
+
+### v0.3 @ 2017-01-23
+
+* Added presets for welding thresholds
+* Saves the selected threshold into config file
