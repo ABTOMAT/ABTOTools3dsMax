@@ -22,6 +22,9 @@ Made by Dmitry Maslov @ http://maslov.co
 * Telegram: @ABTOMAT
 * GitHub: ABTOMAT
 
+Feel free to let me know your opinion.
+Constructive feedback is appreciated.
+
 January 2018.
 
 ## 2. Features
@@ -66,3 +69,8 @@ You can also do this only by U or by V coordinate by choosing the corresponding 
 
 * Added presets for welding thresholds
 * Saves the selected threshold into config file
+
+## 5. To-Do
+
+* Add Collapse UV button
+* Add align to edge functionality
