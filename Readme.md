@@ -31,12 +31,17 @@ January 2018.
 
 ### Welding UV vertices
 
+(click on the image below to see the video)
 
+[![Welding UV video](https://img.youtube.com/vi/pljZN8-Nex8/0.jpg)](https://www.youtube.com/watch?v=pljZN8-Nex8)
+
+You can weld UV vertices within the given threshold by clicking "Weld" button.
 
 ![Before welding](/readmeimages/welding_regular_before.png)
 ![After welding](/readmeimages/welding_regular_after.png)
 
 You can also do this only by U or by V coordinate by choosing the corresponding radiobutton.
+
 
 ## 3. Installation
 
@@ -73,5 +78,6 @@ You can also do this only by U or by V coordinate by choosing the corresponding 
 ## 5. To-Do
 
 * Add Collapse UV button
-* Add align to edge functionality=======
+* Add align to edge functionality
+=======
 >>>>>>> ab7457987efdd2c01327b962a91985a2a4f296ed
