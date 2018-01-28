@@ -73,7 +73,7 @@ You can also do this only by U or by V coordinate by choosing the corresponding 
 
 * Added presets for welding thresholds
 * Saves the selected threshold into config file
-<<<<<<< HEAD
+
 
 ## 5. To-Do
 
