@@ -73,5 +73,4 @@ You can also do this only by U or by V coordinate by choosing the corresponding 
 ## 5. To-Do
 
 * Add Collapse UV button
-* Add align to edge functionality=======
->>>>>>> ab7457987efdd2c01327b962a91985a2a4f296ed
+* Add align to edge functionality
