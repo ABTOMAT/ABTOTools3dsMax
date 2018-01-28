@@ -28,6 +28,10 @@ January 2018.
 
 ### Welding UV vertices
 
+(click on the image below to see the video)
+
+[![Welding UV video](https://img.youtube.com/vi/pljZN8-Nex8/0.jpg)](https://www.youtube.com/watch?v=pljZN8-Nex8)
+
 You can weld UV vertices within the given threshold by clicking "Weld" button.
 
 ![Before welding](/readmeimages/welding_regular_before.png)
@@ -35,7 +39,6 @@ You can weld UV vertices within the given threshold by clicking "Weld" button.
 
 You can also do this only by U or by V coordinate by choosing the corresponding radiobutton.
 
-[![Welding UV video](https://img.youtube.com/vi/pljZN8-Nex8/0.jpg)](https://www.youtube.com/watch?v=pljZN8-Nex8)
 
 ## 3. Installation
 
