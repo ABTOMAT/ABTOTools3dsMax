@@ -75,7 +75,13 @@ You can also do this only by U or by V coordinate by choosing the corresponding 
 * Saves the selected threshold into config file
 
 
-## 5. To-Do
+## 5. Known bugs
+
+* When there's more nath one UVW Modifiers on the object, script works uncorrectly. To be fixed.
+
+**If you know any other bugs please let me know!**
+
+## 6. To-Do
 
 * Add Collapse UV button
 * Add align to edge functionality
