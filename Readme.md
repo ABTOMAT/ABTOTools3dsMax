@@ -77,7 +77,7 @@ You can also do this only by U or by V coordinate by choosing the corresponding 
 
 ## 5. Known bugs
 
-* When there's more nath one UVW Modifiers on the object, script works uncorrectly. To be fixed.
+* When there's more than one UVW Modifiers on the object, script works uncorrectly. To be fixed.
 
 **If you know any other bugs please let me know!**
 
