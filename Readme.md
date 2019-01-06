@@ -21,6 +21,7 @@ Made by Dmitry Maslov @ http://maslov.co
 * Skype: blitz3dproger
 * Telegram: @ABTOMAT
 * GitHub: ABTOMAT
+* Patreon: https://www.patreon.com/ABTOMAT
 
 Feel free to let me know your opinion.
 Constructive feedback is appreciated.
